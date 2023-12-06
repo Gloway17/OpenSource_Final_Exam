@@ -20,8 +20,12 @@ import time
 # 1 ≤ target 의 길이 ≤ 100
 # target 은 영소문자로만 이루어져 있습니다.
 
-def solution(my_strung, target):
+def solution(my_string, target):
     answer = 0
+    # ================================= 추가 부분
+    if (my_string.find(target) != -1):
+        answer = 1
+    # ================================= 추가 부분
     return answer
 
 # Q.2 10점
