@@ -42,6 +42,9 @@ def solution(my_string, target):
 #
 # letter = 여러분의 좌우명 또는 인상 깊었던 말을 쓰시오.
 
+# sticktotheplan
+letter = '...  -  ..  -.-.  -.-  -  ---  -  ....  .  .--.  .-..  .-  -.' 
+
 def solution(letter):
     morse = { 
     '.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f',
@@ -50,6 +53,10 @@ def solution(letter):
     '...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x',
     '-.--':'y','--..':'z'}
     answer = ''
+    # ============================== 추가 부분
+    for i in letter.split():
+        answer = answer + morse[i]
+    # ============================== 추가 부분
     return answer
 
 # Q.3 10점
