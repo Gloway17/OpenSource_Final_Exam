@@ -111,6 +111,22 @@ def solution(age):
 
 def solution(r1, r2):
     answer = 0
+
+    # ============================== 추가 부분
+    import math
+
+    tmp = 0
+    
+    for i in range(1, r2):
+        for j in range(1, r2):
+            dst = math.sqrt(i*i + j*j)
+            if (r1 < dst and dst < r2):
+                tmp += 1
+    answer += tmp * 4
+
+    answer += (r2 - r1 - 1) * 4
+    # ============================== 추가 부분
+
     return answer
 
 # Q.5 10점
