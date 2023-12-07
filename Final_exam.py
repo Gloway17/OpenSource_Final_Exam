@@ -75,6 +75,26 @@ def solution(letter):
 
 def solution(age):
     answer = ''
+
+    # ============================== 추가 부분
+    dic = 'abcdefghij'
+    tmp = ''
+
+    answer += dic[int(age / 1000)]
+    age %= 1000
+
+    answer += dic[int(age / 100)]
+    age %= 100
+
+    answer += dic[int(age / 10)]
+    age %= 10
+
+    answer += dic[int(age)]
+
+    while (answer[0] == 'a'):
+        answer = answer[1:]
+    # ============================== 추가 부분
+
     return answer
 
 # Q.4 10점
