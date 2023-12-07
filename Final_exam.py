@@ -151,4 +151,14 @@ def solution(r1, r2):
 
 def solution(numbers):
     answer = ''
+
+    # ============================== 추가 부분
+    numbers = [str(i) for i in numbers]
+    numbers.sort()
+    numbers.reverse()
+
+    for i in numbers:
+        answer += i
+    # ============================== 추가 부분
+
     return answer
