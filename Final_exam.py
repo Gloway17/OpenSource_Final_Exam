@@ -43,7 +43,7 @@ def solution(my_string, target):
 # letter = 여러분의 좌우명 또는 인상 깊었던 말을 쓰시오.
 
 # sticktotheplan
-letter = '...  -  ..  -.-.  -.-  -  ---  -  ....  .  .--.  .-..  .-  -.' 
+letter = '...  -  ..  -.-.  -.-  -  ---  -  ....  .  .--.  .-..  .-  -.'
 
 def solution(letter):
     morse = { 
@@ -79,7 +79,7 @@ def solution(age):
     # ============================== 추가 부분
     dic = 'abcdefghij'
     tmp = ''
-
+ 
     answer += dic[int(age / 1000)]
     age %= 1000
 
@@ -153,12 +153,20 @@ def solution(numbers):
     answer = ''
 
     # ============================== 추가 부분
-    numbers = [str(i) for i in numbers]
-    numbers.sort()
-    numbers.reverse()
+    import itertools
 
-    for i in numbers:
-        answer += i
+    numbers = [str(i) for i in numbers]
+
+    p = list(itertools.permutations(numbers, len(numbers)))
+    pnum = []
+
+    for i in range(len(p)):
+        pnum.append('')
+        for j in range(len(p[i])):
+            pnum[i] += p[i][j]
+
+    pnum.sort()
+    answer = pnum[-1]
     # ============================== 추가 부분
 
     return answer
